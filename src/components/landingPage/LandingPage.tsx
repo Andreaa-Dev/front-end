@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function Logo() {
+export default function LandingPage() {
   return <div></div>;
 }
