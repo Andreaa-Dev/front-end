@@ -4,9 +4,11 @@ import { Product } from "../../types/types";
 
 type InitialState = {
   products: Product[];
+  searchProducts: Product[];
 };
 export const initialState: InitialState = {
   products: [],
+  searchProducts: [],
 };
 
 const productSlice = createSlice({
@@ -15,6 +17,14 @@ const productSlice = createSlice({
   reducers: {
     getProductSuccess: (state, action: PayloadAction<Product[]>) => {
       state.products = action.payload;
+    },
+    searchProducts: (state, action: PayloadAction<string>) => {
+      const result = state.products.filter(
+        (product) =>
+          product.title.toLocaleLowerCase() !==
+          action.payload.toLocaleLowerCase()
+      );
+      state.searchProducts = result;
     },
   },
 });

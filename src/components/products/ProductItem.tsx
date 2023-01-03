@@ -21,6 +21,8 @@ export default function ProductItem({ item }: { item: Product }) {
     (state: RootState) => state.favoriteProduct.favoriteProductList
   );
 
+  const cartList = useSelector((state: RootState) => state.cart.cartList);
+
   function addFavoriteProduct() {
     dispatch(favoriteProductActions.getFavoriteProduct(item));
   }
@@ -39,21 +41,29 @@ export default function ProductItem({ item }: { item: Product }) {
       product.title.toLocaleLowerCase() === item.title.toLocaleLowerCase()
   );
 
+  const isAdded = cartList.some(
+    (cart) => cart.title.toLocaleLowerCase() === item.title.toLocaleLowerCase()
+  );
+
   return (
     <Box>
       <Typography>{item.title}</Typography>
       <Typography>{item.price}</Typography>
       <Rating name="read-only" value={item.rating.rate} readOnly />
-      <Link to={`/products/${item.id}`}>
-        <Button variant="outlined"> More</Button>
-      </Link>
-      <Button variant="outlined"> Add to cart</Button>
 
-      <FavoriteIcon
-        onClick={addFavoriteProduct}
-        sx={{ color: isFavorite ? pink[500] : teal[500] }}
-      />
-      <ShoppingCartIcon onClick={addProductToCart} />
+      <Box>
+        <Link to={`/products/${item.id}`}>
+          <Button variant="outlined"> More</Button>
+        </Link>
+        <FavoriteIcon
+          onClick={addFavoriteProduct}
+          sx={{ color: isFavorite ? pink[500] : teal[500] }}
+        />
+        <ShoppingCartIcon
+          onClick={addProductToCart}
+          sx={{ color: isAdded ? pink[500] : teal[500] }}
+        />
+      </Box>
     </Box>
   );
 }

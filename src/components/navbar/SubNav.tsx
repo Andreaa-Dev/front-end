@@ -20,6 +20,9 @@ export default function SubNav() {
   const wishList = useSelector(
     (state: RootState) => state.favoriteProduct.favoriteProductList
   );
+
+  const cartList = useSelector((state: RootState) => state.cart.cartList);
+
   return (
     <Box
       sx={{
@@ -34,7 +37,9 @@ export default function SubNav() {
       <StyledBadge badgeContent={wishList.length} color="primary">
         <Link to="/favorite">Wish list</Link>
       </StyledBadge>
-      <Link to="/cart">Cart</Link>
+      <StyledBadge badgeContent={cartList.length} color="primary">
+        <Link to="/cart">Cart</Link>
+      </StyledBadge>
     </Box>
   );
 }

@@ -53,9 +53,6 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 }));
 
 export default function SwitchTheme() {
-  const theme = useTheme();
-
-  console.log(theme, "thmeme");
   return (
     <FormControlLabel
       control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}

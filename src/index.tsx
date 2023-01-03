@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
@@ -16,14 +16,6 @@ const root = ReactDOM.createRoot(
 const theme = createTheme({
   typography: {
     fontFamily: ["Rajdhani", "sans-serif"].join(","),
-  },
-  palette: {
-    primary: {
-      main: "#0052cc",
-    },
-    secondary: {
-      main: "#edf2ff",
-    },
   },
 });
 

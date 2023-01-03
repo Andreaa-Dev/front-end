@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../redux/store";
 import { fetchProductData } from "../../redux/thunk/product";
 import ProductItem from "./ProductItem";
-import SortByCategory from "../sort/SortByCategory";
 
 export default function ProductList() {
   const dispatch = useDispatch<AppDispatch>();
@@ -18,9 +17,15 @@ export default function ProductList() {
   }, [dispatch]);
 
   return (
-    <Box>
+    <Box
+      sx={{
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr 1fr",
+        width: 1300,
+        height: 1700,
+      }}
+    >
       <Typography>Check out the new collection</Typography>
-      <SortByCategory />
       {productList.map((item) => (
         <ProductItem item={item} />
       ))}
