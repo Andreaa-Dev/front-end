@@ -1,6 +1,8 @@
-import React from "react";
+import React, { createContext } from "react";
 import Switch from "@mui/material/Switch";
 import { styled } from "@mui/material/styles";
+import { useTheme } from "@mui/material/styles";
+
 import FormControlLabel from "@mui/material/FormControlLabel";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
@@ -49,13 +51,15 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     borderRadius: 20 / 2,
   },
 }));
+
 export default function SwitchTheme() {
+  const theme = useTheme();
+
+  console.log(theme, "thmeme");
   return (
-    <div>
-      <FormControlLabel
-        control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
-        label="MUI switch"
-      />
-    </div>
+    <FormControlLabel
+      control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
+      label=""
+    />
   );
 }

@@ -1,11 +1,16 @@
 export type Product = {
-  title: number;
+  id: number;
+  title: string;
   price: string;
   description: string;
   category: string;
   image: string;
   rating: {
-    rate: 3.9;
-    count: 120;
+    rate: number;
+    count: number;
   };
+};
+
+export type ProductCart = Product & {
+  quantity: number;
 };

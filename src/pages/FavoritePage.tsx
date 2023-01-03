@@ -1,5 +1,10 @@
 import React from "react";
+import WishList from "../components/wishList/WishList";
 
 export default function FavoritePage() {
-  return <div>FavoritePage</div>;
+  return (
+    <div>
+      <WishList />
+    </div>
+  );
 }
