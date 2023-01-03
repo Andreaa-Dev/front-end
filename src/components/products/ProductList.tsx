@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 
 import { AppDispatch, RootState } from "../../redux/store";
@@ -35,7 +35,7 @@ export default function ProductList() {
       }}
     >
       {finalList.map((item) => (
-        <ProductItem item={item} />
+        <ProductItem item={item} key={item.id} />
       ))}
     </Box>
   );

@@ -25,7 +25,6 @@ const productSlice = createSlice({
           .toLocaleLowerCase()
           .includes(action.payload.toLocaleLowerCase())
       );
-      console.log(result, "re");
       state.searchProducts = result;
     },
   },

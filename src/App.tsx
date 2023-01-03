@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
+import "./App.css";
 import Home from "./pages/Home";
 import CartPage from "./pages/CartPage";
 import FavoritePage from "./pages/FavoritePage";

@@ -24,7 +24,7 @@ export default function ProductItem({ item }: { item: Product }) {
   const cartList = useSelector((state: RootState) => state.cart.cartList);
 
   function addFavoriteProduct() {
-    dispatch(favoriteProductActions.getFavoriteProduct(item));
+    dispatch(favoriteProductActions.addFavoriteProduct(item));
   }
 
   const productCart: ProductCart = {

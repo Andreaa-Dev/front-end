@@ -13,7 +13,7 @@ const favoriteProductSlice = createSlice({
   name: "favoriteProducts",
   initialState,
   reducers: {
-    getFavoriteProduct: (state, action: PayloadAction<Product>) => {
+    addFavoriteProduct: (state, action: PayloadAction<Product>) => {
       state.favoriteProductList.push(action.payload);
     },
     removeFavoriteProduct: (state, action: PayloadAction<Product>) => {
@@ -21,6 +21,9 @@ const favoriteProductSlice = createSlice({
         (item) => item.id !== action.payload.id
       );
       state.favoriteProductList = result;
+    },
+    updateFavoriteList: (state, action: PayloadAction<Product[]>) => {
+      state.favoriteProductList = action.payload;
     },
   },
 });

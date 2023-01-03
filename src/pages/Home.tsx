@@ -1,7 +1,6 @@
 import React from "react";
-import { useTheme } from "@mui/material/styles";
+import LandingPage from "../components/landingPage/LandingPage";
 
 export default function Home() {
-  const theme = useTheme();
-  return <div>Home</div>;
+  return <LandingPage />;
 }
