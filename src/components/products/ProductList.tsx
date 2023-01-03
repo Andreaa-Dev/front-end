@@ -8,14 +8,23 @@ import ProductItem from "./ProductItem";
 
 export default function ProductList() {
   const dispatch = useDispatch<AppDispatch>();
+
   const productList = useSelector(
     (state: RootState) => state.products.products
+  );
+  const searchProducts = useSelector(
+    (state: RootState) => state.products.searchProducts
   );
 
   useEffect(() => {
     dispatch(fetchProductData());
   }, [dispatch]);
 
+  let finalList = productList;
+
+  if (searchProducts.length > 0) {
+    finalList = searchProducts;
+  }
   return (
     <Box
       sx={{
@@ -25,8 +34,7 @@ export default function ProductList() {
         height: 1700,
       }}
     >
-      <Typography>Check out the new collection</Typography>
-      {productList.map((item) => (
+      {finalList.map((item) => (
         <ProductItem item={item} />
       ))}
     </Box>

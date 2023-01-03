@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import TextField from "@mui/material/TextField";
+import SearchIcon from "@mui/icons-material/Search";
 
 import productActions from "../../redux/slices/products";
 
@@ -10,6 +11,9 @@ export default function SearchForm() {
 
   function onChangeHandler(event: React.ChangeEvent<HTMLInputElement>) {
     setUserInput(event.target.value);
+  }
+
+  function searchHandler() {
     dispatch(productActions.searchProducts(userInput));
   }
 
@@ -21,6 +25,7 @@ export default function SearchForm() {
         variant="standard"
         onChange={onChangeHandler}
       />
+      <SearchIcon onClick={searchHandler} />
     </div>
   );
 }
