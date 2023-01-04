@@ -29,7 +29,7 @@ export default function ProductItem({ item }: { item: Product }) {
 
   const productCart: ProductCart = {
     ...item,
-    quantity: 0,
+    quantity: 1,
   };
 
   function addProductToCart() {
@@ -47,8 +47,10 @@ export default function ProductItem({ item }: { item: Product }) {
 
   return (
     <Box>
-      <Typography>{item.title}</Typography>
-      <Typography>{item.price}</Typography>
+      <Typography sx={{ fontWeight: "bold" }}>{item.title}</Typography>
+      <Typography>{item.price} $</Typography>
+      <img src={item.image} alt={item.title} height="100" />
+      <br></br>
       <Rating name="read-only" value={item.rating.rate} readOnly />
 
       <Box>

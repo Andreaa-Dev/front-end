@@ -32,6 +32,7 @@ export default function ProductList() {
         gridTemplateColumns: "1fr 1fr 1fr",
         width: 1300,
         height: 1700,
+        gap: 2,
       }}
     >
       {finalList.map((item) => (

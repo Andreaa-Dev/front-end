@@ -4,7 +4,6 @@ import Badge, { BadgeProps } from "@mui/material/Badge";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { styled } from "@mui/material/styles";
-
 import { RootState } from "../../redux/store";
 
 const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
@@ -32,13 +31,22 @@ export default function SubNav() {
         width: "300px",
       }}
     >
-      <Link to="">Home</Link>
-      <Link to="/products">Products</Link>
+      <Link to="" className="link">
+        Home
+      </Link>
+
+      <Link to="/products" className="link">
+        Products
+      </Link>
       <StyledBadge badgeContent={wishList.length} color="primary">
-        <Link to="/favorite">Wish list</Link>
+        <Link to="/favorite" className="link">
+          Wish list
+        </Link>
       </StyledBadge>
       <StyledBadge badgeContent={cartList.length} color="primary">
-        <Link to="/cart">Cart</Link>
+        <Link to="/cart" className="link">
+          Cart
+        </Link>
       </StyledBadge>
     </Box>
   );

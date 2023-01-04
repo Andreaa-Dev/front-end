@@ -13,7 +13,17 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addProductToCart: (state, action: PayloadAction<ProductCart>) => {
+    addProductToCart: (state, action) => {
+      const isIncluded = state.cartList.some(
+        (cartItem) => cartItem.id === action.payload.id
+      );
+      console.log(isIncluded, "bo");
+
+      if (isIncluded) {
+        // increase quantity
+        // state.cartList.
+        // return
+      }
       state.cartList.push(action.payload);
     },
     removeProductToCart: (state, action: PayloadAction<ProductCart>) => {
