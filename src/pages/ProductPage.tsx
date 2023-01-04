@@ -3,13 +3,13 @@ import { Box } from "@mui/material";
 
 import SearchForm from "../components/search/SearchForm";
 import ProductList from "../components/products/ProductList";
-import SortByCategory from "../components/sort/SortByCategory";
+import SortForm from "../components/sort/SortForm";
 
 export default function ProductPage() {
   return (
     <Box>
       <SearchForm />
-      <SortByCategory />
+      <SortForm />
       <ProductList />
     </Box>
   );

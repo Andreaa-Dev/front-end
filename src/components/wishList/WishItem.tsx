@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "@mui/system";
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { pink } from "@mui/material/colors";
 import { teal } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
@@ -9,6 +9,7 @@ import { Product } from "../../types/types";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../redux/store";
 import favoriteProductActions from "../../redux/slices/favoriteProduct";
+import cartActions from "../../redux/slices/cart";
 
 export default function WishItem({ item }: { item: Product }) {
   const dispatch = useDispatch();
@@ -25,6 +26,10 @@ export default function WishItem({ item }: { item: Product }) {
     dispatch(favoriteProductActions.removeFavoriteProduct(item));
   }
 
+  function addToCart() {
+    dispatch(cartActions.addProductToCart(item));
+    dispatch(favoriteProductActions.removeFavoriteProduct(item));
+  }
   return (
     <Box>
       <Typography> {item.title}</Typography>
@@ -33,6 +38,9 @@ export default function WishItem({ item }: { item: Product }) {
         onClick={removeFavorite}
         sx={{ color: isFavorite ? pink[500] : teal[500] }}
       />
+      <Button variant="outlined" onClick={addToCart}>
+        Buy
+      </Button>
     </Box>
   );
 }

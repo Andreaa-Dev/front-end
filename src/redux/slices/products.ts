@@ -27,6 +27,42 @@ const productSlice = createSlice({
       );
       state.searchProducts = result;
     },
+    sortByProductName: (state) => {
+      function compare(a: Product, b: Product) {
+        if (a.title.toLocaleLowerCase() < b.title.toLocaleLowerCase()) {
+          return -1;
+        }
+        if (a.title.toLocaleLowerCase() > b.title.toLocaleLowerCase()) {
+          return 1;
+        }
+        return 0;
+      }
+      state.products = state.products.sort(compare);
+    },
+    sortByProductPrice: (state) => {
+      function compare(a: Product, b: Product) {
+        if (a.price < b.price) {
+          return -1;
+        }
+        if (a.price > b.price) {
+          return 1;
+        }
+        return 0;
+      }
+      state.products.sort(compare);
+    },
+    sortByProductCategory: (state) => {
+      function compare(a: Product, b: Product) {
+        if (a.category.toLocaleLowerCase() < b.category.toLocaleLowerCase()) {
+          return -1;
+        }
+        if (a.category.toLocaleLowerCase() > b.category.toLocaleLowerCase()) {
+          return 1;
+        }
+        return 0;
+      }
+      state.products.sort(compare);
+    },
   },
 });
 

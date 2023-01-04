@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import { Button, Typography } from "@mui/material";
 
 export default function LandingPage() {
@@ -8,7 +8,11 @@ export default function LandingPage() {
       <Typography sx={{ fontSize: 100 }}>Sale</Typography>
       <br />
       <Typography sx={{ fontSize: 70 }}>Up to 50% off</Typography>
-      <Button variant="outlined"> Check out new collection</Button>
+      <Button variant="outlined" sx={{ color: "black" }}>
+        <Link className="link" to="/products">
+          Check out new collection
+        </Link>
+      </Button>
     </div>
   );
 }

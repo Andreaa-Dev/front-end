@@ -30,9 +30,8 @@ export default function ProductList() {
       sx={{
         display: "grid",
         gridTemplateColumns: "1fr 1fr 1fr",
-        width: 1300,
-        height: 1700,
         gap: 2,
+        m: 5,
       }}
     >
       {finalList.map((item) => (
