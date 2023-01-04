@@ -27,8 +27,8 @@ export default function SubNav() {
       sx={{
         display: "flex",
         flexDirection: "row",
-        justifyContent: "space-around",
-        width: "300px",
+        justifyContent: "space-evenly",
+        width: "800px",
       }}
     >
       <Link to="" className="link">

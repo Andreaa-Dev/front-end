@@ -8,11 +8,7 @@ function ServiceFooter() {
   return (
     <Box
       sx={{
-        // backgroundImage: `url(${background})`,
-        // backgroundSize: "fit",
-        // backgroundPosition: "50% 50%",
-        // backgroundRepeat: "no-repeat",
-        // color: "white",
+        backgroundColor: "#bbdefb",
         p: 15,
       }}
     >
@@ -29,21 +25,28 @@ function ServiceFooter() {
         <Box
           sx={{
             textAlign: "center",
-            width: 300,
+            width: 400,
           }}
         >
           <LocalShippingOutlinedIcon />
-          <Typography>FREE DELIVERY</Typography>
-          <Typography>Free custom duty</Typography>
+          <Typography sx={{ fontWeight: "bold", m: "10px" }}>
+            FREE DELIVERY
+          </Typography>
+          <Typography>
+            Become a member to get free standard shipping on your first
+            purchase!
+          </Typography>
         </Box>
         <Box
           sx={{
             textAlign: "center",
-            width: 300,
+            width: 400,
           }}
         >
           <ReplayOutlinedIcon />
-          <Typography>FREE RETURN</Typography>
+          <Typography sx={{ fontWeight: "bold", m: "10px" }}>
+            FREE RETURN
+          </Typography>
           <Typography>
             Enjoy complimentary Standard shipping, with free Customs duty
           </Typography>
@@ -51,14 +54,15 @@ function ServiceFooter() {
         <Box
           sx={{
             textAlign: "center",
-            width: 300,
+            width: 400,
           }}
         >
           <CardGiftcardOutlinedIcon />
-          <Typography>ART OF GIFTING</Typography>
+          <Typography sx={{ fontWeight: "bold", m: "10px" }}>
+            ART OF GIFTING
+          </Typography>
           <Typography>
-            Your order will be presented in an iconic Dior gift box and
-            accompanied by a personalised message
+            Your order will be presented in an iconic gift box
           </Typography>
         </Box>
       </Box>

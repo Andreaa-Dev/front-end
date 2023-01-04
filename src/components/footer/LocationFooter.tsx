@@ -13,7 +13,7 @@ function LocationFooter() {
   return (
     <Box
       sx={{
-        // backgroundImage: `url(${location})`,
+        backgroundColor: "#e3f2fd",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

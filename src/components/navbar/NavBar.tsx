@@ -12,6 +12,7 @@ export default function NavBar() {
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
+        backgroundColor: "#e3f2fd",
       }}
     >
       <Logo />
@@ -21,7 +22,7 @@ export default function NavBar() {
           flexDirection: "row",
           justifyContent: "space-evenly",
           alignItems: "center",
-          width: "500px",
+          width: "800px",
         }}
       >
         <SubNav />
