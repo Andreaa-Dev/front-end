@@ -4,8 +4,8 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import { createTheme, ThemeProvider } from "@mui/material";
 import { Provider } from "react-redux";
+import { createTheme, ThemeProvider } from "@mui/material";
 
 import store from "./redux/store";
 

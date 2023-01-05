@@ -14,18 +14,46 @@ export default function CartItem({ item }: { item: ProductCart }) {
     dispatch(cartActions.removeProductToCart(item));
   }
 
+  function increaseQuantityHandler() {
+    dispatch(cartActions.increaseQuantity(item));
+  }
+  function decreaseQuantityHandler() {
+    if (item.quantity === 1) return;
+    dispatch(cartActions.decreaseQuantity(item));
+  }
   return (
-    <div>
-      <Typography>{item.title}</Typography>
-      <Typography>${item.price} </Typography>
-      <Box sx={{ display: "flex", flexDirection: "row", m: 1 }}>
-        <AddCircleIcon />
-        <Typography> {item.quantity} </Typography>
-        <RemoveCircleIcon />
+    <Box
+      sx={{
+        m: 1,
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+      }}
+    >
+      <Box
+        sx={{
+          minWidth: 500,
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+        }}
+      >
+        <Typography>{item.title}</Typography>
+        <Typography sx={{ fontWeight: "bold", ml: 1 }}>
+          ${item.price}
+        </Typography>
       </Box>
-      <Button variant="outlined" onClick={removeCartItem}>
-        Remove
-      </Button>
-    </div>
+
+      <Box sx={{ display: "flex", flexDirection: "row", m: 1 }}>
+        <Box sx={{ display: "flex", flexDirection: "row", m: 1 }}>
+          <AddCircleIcon onClick={increaseQuantityHandler} />
+          <Typography> {item.quantity} </Typography>
+          <RemoveCircleIcon onClick={decreaseQuantityHandler} />
+        </Box>
+        <Button variant="outlined" onClick={removeCartItem}>
+          Remove
+        </Button>
+      </Box>
+    </Box>
   );
 }

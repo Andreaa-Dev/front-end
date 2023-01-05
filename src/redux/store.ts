@@ -6,6 +6,7 @@ import favoriteProductActions, {
   favoriteProductReducer,
 } from "./slices/favoriteProduct";
 import { cartReducer } from "./slices/cart";
+import { themeReducer } from "./slices/theme";
 
 const store = configureStore({
   reducer: {
@@ -13,6 +14,7 @@ const store = configureStore({
     productDetail: productDetailReducer,
     favoriteProduct: favoriteProductReducer,
     cart: cartReducer,
+    theme: themeReducer,
   },
 });
 

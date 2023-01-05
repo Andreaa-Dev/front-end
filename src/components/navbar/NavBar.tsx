@@ -4,15 +4,27 @@ import { Box } from "@mui/material";
 import Logo from "./Logo";
 import SubNav from "./SubNav";
 import SwitchTheme from "./SwitchTheme";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
 
 export default function NavBar() {
+  // theme => background: light/ dark
+  const theme = useSelector((state: RootState) => state.theme.theme);
+  console.log(theme, "theme");
+  let themeOption: string;
+  if (theme === "Light") {
+    themeOption = "white";
+  } else {
+    themeOption = "black";
+  }
+  console.log(themeOption, "th");
   return (
     <Box
       sx={{
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
-        backgroundColor: "#e3f2fd",
+        backgroundColor: { themeOption },
       }}
     >
       <Logo />

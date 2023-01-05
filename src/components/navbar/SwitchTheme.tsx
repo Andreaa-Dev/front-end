@@ -1,9 +1,11 @@
-import React, { createContext } from "react";
+import React from "react";
 import Switch from "@mui/material/Switch";
 import { styled } from "@mui/material/styles";
-import { useTheme } from "@mui/material/styles";
-
 import FormControlLabel from "@mui/material/FormControlLabel";
+
+import switchThemeActions from "../../redux/slices/theme";
+import { useDispatch } from "react-redux";
+import { Button } from "@mui/material";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -53,7 +55,13 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 }));
 
 export default function SwitchTheme() {
+  const dispatch = useDispatch();
+  function switchThemeHandler() {
+    dispatch(switchThemeActions.switchTheme());
+  }
   return (
-    <FormControlLabel control={<MaterialUISwitch defaultChecked />} label="" />
+    <Button onClick={switchThemeHandler}>
+      <FormControlLabel control={<MaterialUISwitch />} label="" />
+    </Button>
   );
 }

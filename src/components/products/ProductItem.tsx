@@ -71,16 +71,16 @@ export default function ProductItem({ item }: { item: Product }) {
 
   return (
     <Box sx={{ marginBottom: 10 }}>
-      <Typography sx={{ fontWeight: "bold" }}>{item.title}</Typography>
+      <Typography sx={{ fontWeight: "bold" }} className="productTitle">
+        {item.title}
+      </Typography>
       <Typography>{item.price} $</Typography>
       <Typography>Category: {item.category} </Typography>
-
       <img src={item.image} alt={item.title} height="100" />
       <br></br>
       <Rating name="read-only" value={item.rating.rate} readOnly />
-
       <Box>
-        <Link to={`/products/${item.id}`}>
+        <Link to={`/products/${item.id}`} className="link">
           <Button variant="outlined"> More</Button>
         </Link>
         <FavoriteIcon

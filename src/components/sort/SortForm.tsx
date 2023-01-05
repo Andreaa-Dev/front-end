@@ -24,15 +24,24 @@ export default function SortForm() {
     }
   }
   return (
-    <Box sx={{ minWidth: 120, marginTop: 5 }}>
+    <Box
+      sx={{
+        minWidth: 120,
+        marginTop: 5,
+        display: "flex",
+        flexDirection: "row-reverse",
+        mr: 5,
+      }}
+    >
       <TextField
         id="filled-select-currency"
         select
-        label="Select"
+        label="Filter"
         defaultValue="Name"
-        helperText="Please select your currency"
+        helperText="Please select your option"
         variant="filled"
         value={option}
+        sx={{ width: 200 }}
         onChange={(e) => {
           setOption(e.target.value);
           sortHandler(e.target.value);

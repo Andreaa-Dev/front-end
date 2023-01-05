@@ -31,7 +31,12 @@ export default function ProductList() {
         display: "grid",
         gridTemplateColumns: "1fr 1fr 1fr",
         gap: 2,
-        m: 5,
+        mt: 6,
+        mb: 0,
+        ml: "auto",
+        mr: "auto",
+        width: "90%",
+        textAlign: "center",
       }}
     >
       {finalList.map((item) => (

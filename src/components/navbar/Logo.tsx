@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@mui/system";
 
-import logo from "../../misc/logo.png";
+import logo from "../../misc/logo.jpeg";
 
 export default function Logo() {
   return (
