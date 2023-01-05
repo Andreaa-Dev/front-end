@@ -32,6 +32,7 @@ export default function CartList() {
   const total = cartList.reduce((accumulator, currentValue) => {
     return accumulator + currentValue.price * currentValue.quantity;
   }, 0);
+
   if (cartList.length === 0)
     return (
       <Box

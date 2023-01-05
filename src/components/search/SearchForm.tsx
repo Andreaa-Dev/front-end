@@ -22,8 +22,9 @@ export default function SearchForm() {
     <Box sx={{ display: "flex", justifyContent: "center" }}>
       <TextField
         id="standard-basic"
-        label="Standard"
+        label="Search"
         variant="standard"
+        helperText="Please search by product name"
         onChange={onChangeHandler}
         sx={{ width: 350 }}
       />

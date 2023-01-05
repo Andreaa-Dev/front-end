@@ -34,7 +34,6 @@ export default function SubNav() {
       <Link to="" className="link">
         Home
       </Link>
-
       <Link to="/products" className="link">
         Products
       </Link>

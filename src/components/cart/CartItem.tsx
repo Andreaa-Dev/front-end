@@ -17,6 +17,7 @@ export default function CartItem({ item }: { item: ProductCart }) {
   function increaseQuantityHandler() {
     dispatch(cartActions.increaseQuantity(item));
   }
+
   function decreaseQuantityHandler() {
     if (item.quantity === 1) return;
     dispatch(cartActions.decreaseQuantity(item));

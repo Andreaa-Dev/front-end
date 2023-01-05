@@ -1,4 +1,5 @@
 import React from "react";
+import { Box } from "@mui/material";
 import { Routes, Route } from "react-router-dom";
 
 import "./App.css";
@@ -9,7 +10,6 @@ import NavBar from "./components/navbar/NavBar";
 import Footer from "./components/footer/Footer";
 import ProductPage from "./pages/ProductPage";
 import ProductDetail from "./components/productDetail/ProductDetail";
-import { Box } from "@mui/material";
 
 function App() {
   return (

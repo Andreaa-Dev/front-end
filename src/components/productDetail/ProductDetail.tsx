@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Box, Typography, Button } from "@mui/material";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -19,10 +20,15 @@ export default function ProductDetail() {
   }, [dispatch, productId]);
   console.log(productDetail, "p");
   return (
-    <div>
-      ProductDetail
-      <div> {productDetail?.title}</div>
-      <div> {productDetail?.category}</div>
-    </div>
+    <Box sx={{ display: "flex", flexDirection: "row" }}>
+      <Box>
+        <img src={productDetail?.image} alt={productDetail?.title} />
+      </Box>
+      <Box>
+        <Typography> {productDetail?.title}</Typography>
+        <Typography> {productDetail?.category}</Typography>
+        <Button>Add to cart</Button>
+      </Box>
+    </Box>
   );
 }
