@@ -22,12 +22,18 @@ export default function ProductDetail() {
   return (
     <Box sx={{ display: "flex", flexDirection: "row" }}>
       <Box>
-        <img src={productDetail?.image} alt={productDetail?.title} />
+        <img
+          src={productDetail?.image}
+          alt={productDetail?.title}
+          height="300px"
+        />
       </Box>
-      <Box>
+      <Box sx={{ width: 400 }}>
         <Typography> {productDetail?.title}</Typography>
+        <Typography> $ {productDetail?.price}</Typography>
+        <Typography>{productDetail?.description}</Typography>
         <Typography> {productDetail?.category}</Typography>
-        <Button>Add to cart</Button>
+        <Button variant="outlined">Add to cart</Button>
       </Box>
     </Box>
   );
