@@ -18,7 +18,6 @@ export default function ProductDetail() {
       dispatch(fetchProductDetailData(productId));
     }
   }, [dispatch, productId]);
-  console.log(productDetail, "p");
   return (
     <Box sx={{ display: "flex", flexDirection: "row" }}>
       <Box>

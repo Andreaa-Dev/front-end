@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 type InitialState = {
   theme: "Light" | "Dark";
 };
+
 export const initialState: InitialState = {
   theme: "Light",
 };
@@ -14,6 +15,7 @@ const themeSlice = createSlice({
     switchTheme: (state) => {
       if (state.theme === "Light") {
         state.theme = "Dark";
+        return;
       }
       if (state.theme === "Dark") {
         state.theme = "Light";

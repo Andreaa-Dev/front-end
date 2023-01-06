@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { styled } from "@mui/material/styles";
 import { RootState } from "../../redux/store";
+import { Typography } from "@mui/material";
 
 const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -22,6 +23,14 @@ export default function SubNav() {
 
   const cartList = useSelector((state: RootState) => state.cart.cartList);
 
+  const theme = useSelector((state: RootState) => state.theme.theme);
+
+  let colorTheme: string = "#212121";
+
+  if (theme === "Dark") {
+    colorTheme = "#e3f2fd";
+  }
+
   return (
     <Box
       sx={{
@@ -32,19 +41,19 @@ export default function SubNav() {
       }}
     >
       <Link to="" className="link">
-        Home
+        <Typography sx={{ color: colorTheme }}>Home</Typography>
       </Link>
       <Link to="/products" className="link">
-        Products
+        <Typography sx={{ color: colorTheme }}>Products</Typography>
       </Link>
       <StyledBadge badgeContent={wishList.length} color="primary">
         <Link to="/favorite" className="link">
-          Wish list
+          <Typography sx={{ color: colorTheme }}>Wish List</Typography>
         </Link>
       </StyledBadge>
       <StyledBadge badgeContent={cartList.length} color="primary">
         <Link to="/cart" className="link">
-          Cart
+          <Typography sx={{ color: colorTheme }}>Cart</Typography>
         </Link>
       </StyledBadge>
     </Box>

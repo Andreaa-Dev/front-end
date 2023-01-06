@@ -10,21 +10,21 @@ import { RootState } from "../../redux/store";
 export default function NavBar() {
   // theme => background: light/ dark
   const theme = useSelector((state: RootState) => state.theme.theme);
-  console.log(theme, "theme");
-  let themeOption: string;
-  if (theme === "Light") {
-    themeOption = "white";
-  } else {
-    themeOption = "black";
+
+  let backgroundTheme: string = "#e3f2fd";
+  let colorTheme: string = "#212121";
+
+  if (theme === "Dark") {
+    backgroundTheme = "#212121";
+    colorTheme = "#e3f2fd";
   }
-  console.log(themeOption, "th");
   return (
     <Box
       sx={{
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
-        backgroundColor: { themeOption },
+        backgroundColor: backgroundTheme,
       }}
     >
       <Logo />
