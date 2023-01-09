@@ -19,8 +19,16 @@ export default function ProductDetail() {
     }
   }, [dispatch, productId]);
   return (
-    <Box sx={{ display: "flex", flexDirection: "row" }}>
-      <Box>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "row",
+        ml: "auto",
+        mr: "auto",
+        width: "700px",
+      }}
+    >
+      <Box sx={{ mr: 10 }}>
         <img
           src={productDetail?.image}
           alt={productDetail?.title}
