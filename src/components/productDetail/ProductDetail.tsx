@@ -26,6 +26,8 @@ export default function ProductDetail() {
         ml: "auto",
         mr: "auto",
         width: "700px",
+        mt: 10,
+        mb: 10,
       }}
     >
       <Box sx={{ mr: 10 }}>
@@ -38,7 +40,7 @@ export default function ProductDetail() {
       <Box sx={{ width: 400 }}>
         <Typography> {productDetail?.title}</Typography>
         <Typography> $ {productDetail?.price}</Typography>
-        <Typography>{productDetail?.description}</Typography>
+        <Typography>Description:{productDetail?.description}</Typography>
         <Typography> {productDetail?.category}</Typography>
         <Button variant="outlined">Add to cart</Button>
       </Box>
