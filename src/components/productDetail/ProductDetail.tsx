@@ -38,7 +38,7 @@ export default function ProductDetail() {
         />
       </Box>
       <Box sx={{ width: 400 }}>
-        <Typography> {productDetail?.title}</Typography>
+        <Typography sx={{ fontWeight: 500 }}>{productDetail?.title}</Typography>
         <Typography> $ {productDetail?.price}</Typography>
         <Typography>Description:{productDetail?.description}</Typography>
         <Typography> {productDetail?.category}</Typography>
